@@ -125,13 +125,23 @@
 #endif
 #define Z_ENABLE_PIN                X_ENABLE_PIN
 
+// Z2 stepper is connected to the output marked as E (E0 extruder)
+#ifndef Z2_STEP_PIN
+  #define Z2_STEP_PIN                       PB4
+#endif
+#ifndef Z2_DIR_PIN
+  #define Z2_DIR_PIN                        PB3
+#endif
+#define Z2_ENABLE_PIN               X_ENABLE_PIN
+
+// Extruder is connected to the extra driver
 #ifndef E0_STEP_PIN
-  #define E0_STEP_PIN                       PB4
+  #define E0_STEP_PIN                       PA14
 #endif
 #ifndef E0_DIR_PIN
-  #define E0_DIR_PIN                        PB3
-#endif
-#define E0_ENABLE_PIN               X_ENABLE_PIN
+  #define E0_DIR_PIN                        PA13
+ #endif
+#define E0_ENABLE_PIN               X_ENABLE_PIN // Always enabled in hardware
 
 //
 // Temperature Sensors
